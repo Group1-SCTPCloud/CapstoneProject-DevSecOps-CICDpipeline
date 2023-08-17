@@ -67,7 +67,7 @@ Proper handling of CICD Pipeline Secrets is to be carried out.
 -  Create new Role on AWS and use the secret into Github, Not User
 -  Get Key from AWS
 
--  Write the Terraform script to be used in the CD pipeline.
+Write the Terraform script to be used in the CD pipeline.
 - Create a S3 bucket for storage of Terraform state
 -  Ensure that the .tf state file is stored remotely in a S3 bucket
 -  Terraform script should replace the old version of the static website within the same bucket.
