@@ -29,14 +29,14 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 ## Branching Strategies
 Production Branch
-url
+<url>
 
 
 Development Branch
-url
+<url>
 
 Feature Branch
-url
+<url>
 
 
 
@@ -44,13 +44,15 @@ ________________________________________________________________________________
 ## Security
 
 
-Branch protection rule activation for github: 
+Branch protection rule activation for github
+For Main and Dev Branch: 
 - setting > branch > branch protection rule > add a new rule > 
  -select the branch to protect
  -Enabled "require a pull request before merging"
  -Enabled "require approval"
  -Enabled "require status checks to pass before merging"
 
+For Main Branch:
  ( should we also enable "Require review from Code Owners"? )
 
 - Enabled "Secrets scanning and push protection"
@@ -67,7 +69,7 @@ Added AWS access keys to Github secrets for reference, variable name to use:
 _______________________________________________________________________________________
 ## Security
 
-Jira - schedule and scrums sessions
+
 
 
 
@@ -136,7 +138,11 @@ _Resources_
   - https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
   - https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
 
+- approval process
+
+![Alt text](image.png)
 
 
+- merge after approval
 _______________________________________________________________________________________
 
