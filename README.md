@@ -1,4 +1,4 @@
-# CapstoneProject-DevSecOps-CICDpipeline
+# CapstoneProject-DevSecOps-CICDpipeline Group 1
 Deploy a static website
 _______________________________________________________________________________________
 ## Company Profile
@@ -11,7 +11,9 @@ ________________________________________________________________________________
 - Chua Hong Sheng
 - Guo Enchen
 - Julian Lin
-
+---
+Development Timeline
+https://wishingbox.atlassian.net/jira/software/projects/CG1/boards/1/timeline?selectedIssue=CG1-14&timeline=WEEKS
 
 _______________________________________________________________________________________
 ## Getting started
@@ -29,11 +31,13 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 ## Branching Strategies
 Production Branch
-url
+
+[url](https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline)
 
 
 Development Branch
-url
+https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline/tree/dev
+
 
 Feature Branch
 url
@@ -77,7 +81,7 @@ Write the Terraform script to be used in the CD pipeline.
 Web developer 
 DevO ps 
 Cloud Engineer 
-
+---
 _Resources_
 https://blog.awsfundamentals.com/using-s3-with-terraform
 
