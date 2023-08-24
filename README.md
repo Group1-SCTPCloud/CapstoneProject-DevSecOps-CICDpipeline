@@ -1,4 +1,4 @@
-# CapstoneProject-DevSecOps-CICDpipeline
+# CapstoneProject-DevSecOps-CICDpipeline Group 1
 Deploy a static website
 _______________________________________________________________________________________
 ## Company Profile
@@ -11,7 +11,6 @@ ________________________________________________________________________________
 - Chua Hong Sheng
 - Guo Enchen
 - Julian Lin
-
 ---
 Development Timeline
 https://wishingbox.atlassian.net/jira/software/projects/CG1/boards/1/timeline?selectedIssue=CG1-14&timeline=WEEKS
@@ -145,5 +144,21 @@ _Resources_
 
 
 - merge after approval
+**Key Roles**
+Web developer 
+DevO ps 
+Cloud Engineer 
+---
+_Resources_
+https://blog.awsfundamentals.com/using-s3-with-terraform
+
+https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-zero-to-hero-with-wireframe-prototype-figma/
+
+Creating S3 Website with Github actions
+https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
+https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
+
+
+
 _______________________________________________________________________________________
 
