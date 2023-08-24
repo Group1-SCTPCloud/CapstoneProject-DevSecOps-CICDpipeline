@@ -12,6 +12,9 @@ ________________________________________________________________________________
 - Guo Enchen
 - Julian Lin
 
+---
+Development Timeline
+https://wishingbox.atlassian.net/jira/software/projects/CG1/boards/1/timeline?selectedIssue=CG1-14&timeline=WEEKS
 
 _______________________________________________________________________________________
 ## Getting started
@@ -29,11 +32,11 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 ## Branching Strategies
 Production Branch
-<url>
+- [url](https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline)
 
 
 Development Branch
-<url>
+- https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline/tree/dev
 
 Feature Branch
 <url>
@@ -71,11 +74,11 @@ ________________________________________________________________________________
 
 
 
-
+_______________________________________________________________________________________
 
 **Key Roles**
-Web developer 
-DevO ps 
+Web Developer 
+DevOps 
 Cloud Engineer 
 
 
@@ -93,8 +96,6 @@ ________________________________________________________________________________
 ## CICD Pipeline
 
 
---------------------------------------
-Julian's draft that we can incorporate into the write up above. 
 
 
 Create New Project 
