@@ -50,8 +50,8 @@ Branch protection rule activation for github:
  -Enabled "require a pull request before merging"
  -Enabled "require approval"
  -Enabled "require status checks to pass before merging"
-"
- ( should we also tick "Require review from Code Owners"? )
+
+ ( should we also enable "Require review from Code Owners"? )
 
 - Enabled "Secrets scanning and push protection"
 - Enabled "Do not allow bypassing the above settings in main branch"
@@ -60,8 +60,8 @@ ________________________________________________________________________________
 Secrets - add
 
 Added AWS access keys to Github secrets for reference, variable name to use:
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
 
 
 _______________________________________________________________________________________
@@ -128,13 +128,13 @@ Write the Terraform script to be used in the CD pipeline.
 
 
 _Resources_
-https://blog.awsfundamentals.com/using-s3-with-terraform
+- https://blog.awsfundamentals.com/using-s3-with-terraform
 
-https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-zero-to-hero-with-wireframe-prototype-figma/
+- https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-zero-to-hero-with-wireframe-prototype-figma/
 
-Creating S3 Website with Github actions
-https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
-https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
+- Creating S3 Website with Github actions
+  - https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
+  - https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
 
 
 
