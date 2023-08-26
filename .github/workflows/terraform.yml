@@ -1,7 +1,8 @@
 name: Deploy AWS S3 static website Infrastructure
 
 on:
-  pull_request:
+  #pull_request:
+    push:
       branches: dev
       paths: Infra/**
 
@@ -22,7 +23,7 @@ jobs:
             run:
               shell: bash
               # We keep Terraform files in the terraform directory.
-              working-directory: ./terraform
+              working-directory: ./Infra
         
         steps:
             - name: Checkout the repository to the runner
