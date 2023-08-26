@@ -3,7 +3,7 @@ name: Deploy AWS S3 static website Infrastructure
 on:
     push:
       branches: dev
-      #paths: Infra/**
+      paths: Infra/**
 
 env:
     #verbosity setting for Terraform logs
@@ -16,7 +16,7 @@ env:
 
 jobs:
     terraform:
-        name: "Terraform Infrastructure Change Management"
+        name: "Terraform Infrastructure"
         runs-on: ubuntu-latest
         defaults:
             run:
