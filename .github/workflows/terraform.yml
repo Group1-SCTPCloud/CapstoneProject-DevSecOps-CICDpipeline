@@ -3,7 +3,7 @@ name: Deploy AWS S3 static website Infrastructure
 on:
   #pull_request:
     push:
-      branches: dev
+      branches: feature #dev
       paths: Infra/**
 
 env:
