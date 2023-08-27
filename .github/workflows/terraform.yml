@@ -2,8 +2,8 @@ name: Deploy AWS S3 static website Infrastructure
 
 on:
     push:
-      branches: dev
-      
+      branches: 
+        - '*'
 
 env:
     #verbosity setting for Terraform logs
