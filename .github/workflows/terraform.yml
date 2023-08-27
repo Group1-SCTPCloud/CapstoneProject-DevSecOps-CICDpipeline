@@ -86,3 +86,6 @@ jobs:
             - name: Terraform Apply
               if: github.ref == 'refs/heads/main' && github.event_name == 'push'
               run: terraform apply -auto-approve -input=false
+              #added this to upload index - test
+            - name: Deploy static website to S3 bucket
+              run: aws s3 sync . https://github.com/user/repo s3://example.com --exclude "*" --include "index.html" # this is the old version: s3://juju-web-app-test --delete #update bucketname here
