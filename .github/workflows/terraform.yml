@@ -103,4 +103,4 @@ jobs:
                 aws s3 sync . s3://${{ env.bucket_name }} --delete --exclude "*" --include "index.html"
             
             # can use aws s3 sync <LocalPath> <S3Uri> or <S3Uri> <LocalPath> or <S3Uri> <S3Uri>
-            # represents current repo
+            # represents current repo 
