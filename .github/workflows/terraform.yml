@@ -15,7 +15,7 @@ env:
     # S3 bucket for the Terraform state
     #BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}} 
     # see if it works, fr https://notestoself.dev/posts/github-action-s3-botocore-awsrequest-process-255-error/
-    AWS_EC2_METADATA_DISABLED: true
+    #AWS_EC2_METADATA_DISABLED: true
 
 jobs:
     terraform:
