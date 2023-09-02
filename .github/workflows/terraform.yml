@@ -1,10 +1,8 @@
 name: Deploy AWS S3 static website Infrastructure
 
 on:
-  #pull_request:
-    push:
-      branches: dev
-      paths: Infra/**
+  workflow_call:
+    paths: Infra/**
 
 env:
     #verbosity setting for Terraform logs

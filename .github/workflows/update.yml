@@ -1,8 +1,7 @@
 name: upload or update index.html 
 
 on:
-    push:
-        branches: '*'
+  workflow_call:
 
 
 jobs:
@@ -32,3 +31,5 @@ jobs:
             
         # can use aws s3 sync <LocalPath> <S3Uri> or <S3Uri> <LocalPath> or <S3Uri> <S3Uri>
         #. represents current repo
+        - name: npm ci
+          run: npm ci

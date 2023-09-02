@@ -38,6 +38,7 @@ S3 Bucket for web hosting
 - after creation of s3 bucket, go into: 
    - properties -> ensure Static website hosting is enabled
    - permissions -> ensure bucket policy is made public 
+   - bucket name: group1-staticwebsite-bucket123321
 {
     "Version": "2012-10-17",
     "Statement": [
