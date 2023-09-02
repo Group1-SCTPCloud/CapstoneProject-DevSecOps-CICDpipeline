@@ -13,9 +13,10 @@ jobs:
 
     call-workflow1:
         uses: ./.github/workflows/terraform.yml
-    call-workflow2:
-        if: ${{ always() }} # This will make your workflow2 executed even if workflow1 fails, remove this, if you want to run this only on success of workflow1
-        needs: call-workflow1
-        uses: ./.github/workflows/update.yml
+
+    #call-workflow2:
+    #    if: ${{ always() }} # This will make your workflow2 executed even if workflow1 fails, remove this, if you want to run this only on success of workflow1
+    #    needs: call-workflow1
+    #    uses: ./.github/workflows/update.yml
 
 # if this works , reference:https://stackoverflow.com/questions/73137473/how-do-i-run-githhub-actions-yaml-files-in-certain-order

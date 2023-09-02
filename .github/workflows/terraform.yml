@@ -1,8 +1,11 @@
 name: Deploy AWS S3 static website Infrastructure
 
-on:
+'on':
   workflow_call:
-    paths: Infra/**
+    #paths: 
+    #  - Infra/** #paths keep having problem, trying to take it out first
+
+
 
 env:
     #verbosity setting for Terraform logs
