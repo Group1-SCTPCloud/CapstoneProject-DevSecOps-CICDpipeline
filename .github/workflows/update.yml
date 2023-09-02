@@ -1,10 +1,11 @@
 name: upload or update index.html 
 
 on:
-  workflow_run:
-    workflows: [Deploy AWS S3 static website Infrastructure]
-    types:
-        - completed
+  workflow_call:
+# workflow_run:
+#    workflows: [Deploy AWS S3 static website Infrastructure]
+#    types:
+#        - completed
     
 
 jobs:

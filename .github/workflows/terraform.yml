@@ -1,11 +1,10 @@
 name: Deploy AWS S3 static website Infrastructure
 
-'on':
+on:
   workflow_call:
     #paths: 
     #  - Infra/** #paths keep having problem, trying to take it out first
-
-
+     
 
 env:
     #verbosity setting for Terraform logs
@@ -14,13 +13,11 @@ env:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     # S3 bucket for the Terraform state
-    #BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}} 
-    # see if it works, fr https://notestoself.dev/posts/github-action-s3-botocore-awsrequest-process-255-error/
-    #AWS_EC2_METADATA_DISABLED: true
+    BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }} 
 
 jobs:
     terraform:
-        name: "Terraform Infrastructure Change Management"
+        name: "Terraform Infrastructure"
         runs-on: ubuntu-latest
         defaults:
             run:
@@ -87,5 +84,5 @@ jobs:
               run: exit 1
         
             - name: Terraform Apply
-              if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+              if: github.ref == 'refs/heads/dev' && github.event_name == 'push' #change env check here
               run: terraform apply -auto-approve -input=false
