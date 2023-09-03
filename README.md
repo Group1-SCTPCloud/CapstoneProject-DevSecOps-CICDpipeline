@@ -114,6 +114,9 @@ Slides should include :
 - Program for Deployment
 - Lesson learnt
 - Improvements
+### Lessons Learnt
+- When forking repositories and pulling back to the main repository, workflows have no access to secrets and variables. The workaround is to create a new branch, pull to that branch, then pull back to the original branch..
+
 
 ### Areas for Improvements
 - Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
