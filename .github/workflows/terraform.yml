@@ -51,5 +51,5 @@ jobs:
               run: terraform plan -no-color -input=false
 
             - name: Terraform Apply
-              if: github.ref == 'refs/heads/dev' && github.event_name == 'push' #change env check here
+              if: github.ref == 'refs/heads/dev' && github.event_name == 'pull' #change env check here
               run: terraform apply -auto-approve -input=false
