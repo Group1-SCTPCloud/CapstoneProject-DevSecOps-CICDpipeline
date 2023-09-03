@@ -3,12 +3,6 @@ Deploy a static website
 
 
 
-
-
-
-
-
-
 _______________________________________________________________________________________
 ## Company Profile
   WebSolve is a company that specializes in creating customized administrative software solutions for various industries and domains. WebSolve helps its clients to solve their business challenges and achieve their goals by designing, developing and deploying tailor-made software applications that meet their specific needs and requirements. WebSolve aims to deliver effective solutions that not only help administrators meet their project/daily tasks, but also ensure data quality and efficiency for data collections. With our digitalization and optimization services, we help our clients streamline their workflows and processes, and make the most of their data. WebSolve’s vision is to become a leading provider of customized software solutions in the asia region.
@@ -27,12 +21,30 @@ https://wishingbox.atlassian.net/jira/software/projects/CG1/boards/1/timeline?se
 _______________________________________________________________________________________
 ## Getting started
 
+To host a simple HTML file on an S3 static website, you can use a CI/CD pipeline to create an S3 bucket using Terraform. The newest index.html file from this GitHub repository can then be uploaded and automatically updated whenever there is a push to any branch.
 
 _______________________________________________________________________________________
 ## Dependencies
 
+- npm
+- AWS S3 bucket
+- Snyk
+- Terraform
+
 _______________________________________________________________________________________
 ## Application Structure
+
+**workflow to run one after another**
+
+- to use a new <workflow>.yml file: 
+    - add workflow dispatch
+    - add  call-workflow1:
+           call-workflow2:
+
+    - note that there cannot be more than 3 workflow, not supported
+
+
+**s3 bucket**
 
 S3 Bucket for web hosting
 - after creation of s3 bucket, go into: 
@@ -53,25 +65,31 @@ S3 Bucket for web hosting
 }
 
 
+
+_______________________________________________________________________________________
+### Architecture Diagram
+
+![archit diagram](infrastructure.png)
+
+
+
 _______________________________________________________________________________________
 ## Branching Strategies
-Production Branch
+Production Branch (main)
 - [url](https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline)
 
+Development Branch (dev)
+- [url](https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline/tree/dev)
 
-Development Branch
-- https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline/tree/dev
+Feature Branch (feature)
+- [url](https://github.com/Group1-SCTPCloud/CapstoneProject-DevSecOps-CICDpipeline/tree/feature)
 
-Feature Branch
-<url>
-
-
-
+_As we uses simple html code, we have only a dev branch then to production branch_
 _______________________________________________________________________________________
 ## Security
 
 
-Branch protection rule activation for github
+**Branch protection rule activation for github**
 For Main and Dev Branch: 
 - setting > branch > branch protection rule > add a new rule > 
  -select the branch to protect
@@ -84,21 +102,20 @@ For Main Branch:
 
 - Enabled "Secrets scanning and push protection"
 - Enabled "Do not allow bypassing the above settings in main branch"
+
+**Added Vulnerability Scan**
+- Snyk 
+- npm audit
+
 _______________________________________________________________________________________
 
-Secrets - add
+## Secrets 
 
 Added AWS access keys to Github secrets for reference, variable name to use:
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 - BUCKET_TF_STATE
 - SNYK_TOKEN
-
-
-_______________________________________________________________________________________
-## Security
-
-
 
 _______________________________________________________________________________________
 
@@ -109,7 +126,6 @@ Cloud Engineer
 
 
 
-
 Slides should include :
 - Program for Deployment
 - Lesson learnt
@@ -117,6 +133,9 @@ Slides should include :
 ### Lessons Learnt
 - When forking repositories and pulling back to the main repository, workflows have no access to secrets and variables. The workaround is to create a new branch, pull to that branch, then pull back to the original branch..
 
+- When using call_workflow, cannot have more than 3 workflows. 
+
+- If more than 1 person working on code on same branch like feature(without pull request needed to marge with code to repository), when I am working, I should always "git pull" frequently to see what are the changes made by others.
 
 ### Areas for Improvements
 - Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
@@ -159,9 +178,10 @@ Write the Terraform script to be used in the CD pipeline.
 
 
 
-
+_______________________________________________________________________________________
 
 _Resources_
+
 - https://blog.awsfundamentals.com/using-s3-with-terraform
 
 - https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-zero-to-hero-with-wireframe-prototype-figma/
@@ -170,25 +190,21 @@ _Resources_
   - https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
   - https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
 
+- Github-workflow
+  - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idenv
+
+
+
+
+_______________________________________________________________________________________
+
+## Notes:
+
 - approval process
 
 ![Alt text](image.png)
 
-
 - merge after approval
-**Key Roles**
-Web developer 
-DevO ps 
-Cloud Engineer 
----
-_Resources_
-https://blog.awsfundamentals.com/using-s3-with-terraform
-
-https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-zero-to-hero-with-wireframe-prototype-figma/
-
-Creating S3 Website with Github actions
-https://towardsaws.com/deploy-a-serverless-static-website-in-aws-s3-and-cloudfront-using-github-actions-a1174dec10d4
-https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
 
 
 
