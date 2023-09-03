@@ -1,5 +1,5 @@
 terraform {
-/* Comment for remote deployment
+  /* Comment for remote deployment
 
   required_providers {
     aws = {

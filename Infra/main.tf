@@ -66,7 +66,7 @@ output "website_url" {
 resource "aws_s3_bucket_policy" "bucket-policy" {
   bucket = aws_s3_bucket.group1-static-website.id
 
-policy = <<EOF
+  policy     = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -79,7 +79,7 @@ policy = <<EOF
   ]
 }
 EOF
-depends_on = [aws_s3_bucket_public_access_block.group1-static-website]
+  depends_on = [aws_s3_bucket_public_access_block.group1-static-website]
 
 }
 
