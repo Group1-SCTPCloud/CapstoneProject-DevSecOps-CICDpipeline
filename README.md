@@ -45,7 +45,7 @@ ________________________________________________________________________________
 
 
 **s3 bucket**
-
+```
 S3 Bucket for web hosting
 - after creation of s3 bucket, go into: 
    - properties -> ensure Static website hosting is enabled
@@ -63,7 +63,7 @@ S3 Bucket for web hosting
         }
     ]
 }
-
+```
 
 
 _______________________________________________________________________________________
@@ -90,12 +90,14 @@ ________________________________________________________________________________
 
 
 **Branch protection rule activation for github**
-For Main and Dev Branch: 
+
+For Main and Dev Branch:
+
 - setting > branch > branch protection rule > add a new rule > 
- -select the branch to protect
- -Enabled "require a pull request before merging"
- -Enabled "require approval"
- -Enabled "require status checks to pass before merging"
+  - select the branch to protect
+  - Enabled "require a pull request before merging"
+  - Enabled "require approval"
+  - Enabled "require status checks to pass before merging"
 
 For Main Branch:
  ( should we also enable "Require review from Code Owners"? )
@@ -104,6 +106,7 @@ For Main Branch:
 - Enabled "Do not allow bypassing the above settings in main branch"
 
 **Added Vulnerability Scan**
+
 - Snyk 
 - npm audit
 
@@ -120,16 +123,11 @@ Added AWS access keys to Github secrets for reference, variable name to use:
 _______________________________________________________________________________________
 
 **Key Roles**
-Web Developer 
-DevOps 
-Cloud Engineer 
+- Web Developer 
+- DevOps 
+- Cloud Engineer 
 
 
-
-Slides should include :
-- Program for Deployment
-- Lesson learnt
-- Improvements
 ### Lessons Learnt
 - When forking repositories and pulling back to the main repository, workflows have no access to secrets and variables. The workaround is to create a new branch, pull to that branch, then pull back to the original branch..
 
@@ -206,7 +204,10 @@ ________________________________________________________________________________
 
 - merge after approval
 
-
+- Slides should include :
+  - Program for Deployment
+  - Lesson learnt
+  - Improvements
 
 _______________________________________________________________________________________
 
