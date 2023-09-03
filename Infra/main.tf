@@ -32,6 +32,7 @@ resource "aws_s3_bucket_ownership_controls" "group1-static-website" {
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
+  depends_on = [aws_s3_bucket_public_access_block.group1-static-website]
 }
 
 resource "aws_s3_bucket_public_access_block" "group1-static-website" {
@@ -60,29 +61,25 @@ output "website_url" {
   value = "http://${aws_s3_bucket.group1-static-website.bucket}.s3-website.${var.region}.amazonaws.com"
 }
 
-/*
+
 # S3 bucket policy
 resource "aws_s3_bucket_policy" "bucket-policy" {
   bucket = aws_s3_bucket.group1-static-website.id
 
-  policy = <<POLICY
+policy = <<EOF
 {
-  "Id": "Policy",
+  "Version": "2012-10-17",
   "Statement": [
     {
-      "Action": [
-        "s3:GetObject"
-      ],
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::${aws_s3_bucket.group1-static-website.bucket}/*",
-      "Principal": {
-        "AWS": [
-          "*"
-        ]
-      }
+	  "Principal": "*",
+      "Action": [ "s3:*" ],
+      "Resource": "arn:aws:s3:::group1-staticwebsite-bucket123321/*"
     }
   ]
 }
-POLICY
+EOF
+depends_on = [aws_s3_bucket_public_access_block.group1-static-website]
+
 }
-*/
+
