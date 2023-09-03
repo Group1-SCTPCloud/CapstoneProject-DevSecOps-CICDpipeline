@@ -91,6 +91,8 @@ Secrets - add
 Added AWS access keys to Github secrets for reference, variable name to use:
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
+- BUCKET_TF_STATE
+- SNYK_TOKEN
 
 
 _______________________________________________________________________________________
@@ -113,6 +115,8 @@ Slides should include :
 - Lesson learnt
 - Improvements
 
+### Areas for Improvements
+- Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
 
 
 
