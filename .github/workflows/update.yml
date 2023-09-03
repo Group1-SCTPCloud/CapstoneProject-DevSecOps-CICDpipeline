@@ -35,8 +35,8 @@ jobs:
             
         # can use aws s3 sync <LocalPath> <S3Uri> or <S3Uri> <LocalPath> or <S3Uri> <S3Uri>
         #. represents current repo
-        - name: npm ci
-          run: npm ci
+        #- name: npm ci
+        #  run: npm ci
 
         - uses: actions/checkout@v3
         - name: Use Node.js

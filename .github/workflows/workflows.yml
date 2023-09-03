@@ -18,5 +18,8 @@ jobs:
         if: ${{ always() }} # This will make your workflow2 executed even if workflow1 fails, remove this, if you want to run this only on success of workflow1
         needs: call-workflow1
         uses: ./.github/workflows/update.yml
+        env:
+          TERRAFORM_PATH: './Infra'
+        
 
 # if this works , reference:https://stackoverflow.com/questions/73137473/how-do-i-run-githhub-actions-yaml-files-in-certain-order
