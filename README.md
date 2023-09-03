@@ -138,7 +138,7 @@ ________________________________________________________________________________
 ### Areas for Improvements
 - Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
 
-
+- Can use container to get all the advance features for index.html to look professional
 
 _______________________________________________________________________________________
 ## CICD Pipeline
