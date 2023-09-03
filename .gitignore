@@ -1,3 +1,7 @@
+
+*.json
+.node_module/*
+
 # Local .terraform directories
 **/.terraform/*
 
