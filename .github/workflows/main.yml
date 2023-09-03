@@ -17,9 +17,9 @@ env:
     BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}} 
 
 jobs:
-    #Upload_file:
-    # name: upload index.html
-    # runs-on: ubuntu-latest
+    Upload_file:
+     name: upload index.html
+     runs-on: ubuntu-latest
      
     build:
      runs-on: ubuntu-latest
