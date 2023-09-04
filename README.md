@@ -135,6 +135,8 @@ ________________________________________________________________________________
 
 - If more than 1 person working on code on same branch like feature(without pull request needed to marge with code to repository), when I am working, I should always "git pull" frequently to see what are the changes made by others.
 
+- If use ```git add .``` accidentally for unwanted files, use ```git reset HEAD <filename>``` instead of git stash - this makes the files not able to add into repo unless manually git add <filename> again.
+
 ### Areas for Improvements
 - Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
 
