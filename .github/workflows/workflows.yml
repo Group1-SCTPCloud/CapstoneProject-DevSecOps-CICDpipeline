@@ -13,6 +13,10 @@ env:
 jobs:
     print-from-workflow:
         runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              
             - name: Display GitHub Actions Secret
               run: |
                 echo "The value of AWS_ACCESS_KEY_ID is $AWS_ACCESS_KEY_ID"
