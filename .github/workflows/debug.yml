@@ -20,4 +20,6 @@ jobs:
       - name: Use Secret in Another Workflow
         run: |
           echo "Secret from Parent Workflow 1: $TERRAFORM_PATH"
-          echo "Secret from Parent Workflow 2: $DEBUG_TEST"
+          echo "$DEBUG_TEST" | base64 -d > decoded_secret.txt
+          export DEBUG_TEST_VALUE=$(cat decoded_secret.txt)
+          echo "The value of DEBUG_TEST_VALUE is $DEBUG_TEST_VALUE"

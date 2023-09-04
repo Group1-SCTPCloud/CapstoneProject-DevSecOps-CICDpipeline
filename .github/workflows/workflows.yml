@@ -19,7 +19,7 @@ jobs:
 
             - name: Display GitHub Actions Secret
               run: |
-                echo "$TEST_SECRET" | base64 -d > decoded_secret.txt
+                echo "$DEBUG_TEST" | base64 -d > decoded_secret.txt
                 export DEBUG_TEST_VALUE=$(cat decoded_secret.txt)
                 echo "The value of DEBUG_TEST_VALUE is $DEBUG_TEST_VALUE"
 
