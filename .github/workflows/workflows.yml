@@ -2,26 +2,20 @@ name: Running test yml after another
 on:
     push:
         branches: [ "*" ]
-env:
-    TERRAFORM_PATH: './Infra'
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    # S3 bucket for the Terraform state
-    BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
-    DEBUG_TEST: ${{ secrets.TEST_SECRET }}
 
 jobs:
     print-from-workflow:
         runs-on: ubuntu-latest
+        env:
+            TERRAFORM_PATH: './Infra'
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            # S3 bucket for the Terraform state
+            BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
+            DEBUG_TEST: ${{ secrets.TEST_SECRET }}
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-
-            - name: Display GitHub Actions Secret
-              run: |
-                echo "$DEBUG_TEST" | base64 -d > decoded_secret.txt
-                export DEBUG_TEST_VALUE=$(cat decoded_secret.txt)
-                echo "The value of DEBUG_TEST_VALUE is $DEBUG_TEST_VALUE"
 
     call-workflow1:
         uses: ./.github/workflows/debug.yml
