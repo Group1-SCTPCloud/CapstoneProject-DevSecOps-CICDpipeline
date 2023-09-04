@@ -16,12 +16,21 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-              
+
             - name: Display GitHub Actions Secret
               run: |
-                echo "The value of AWS_ACCESS_KEY_ID is $AWS_ACCESS_KEY_ID"
+                echo "$TEST_SECRET" | base64 -d > decoded_secret.txt
+                export DEBUG_TEST_VALUE=$(cat decoded_secret.txt)
+                echo "The value of DEBUG_TEST_VALUE is $DEBUG_TEST_VALUE"
 
     call-workflow1:
+        env:
+            TERRAFORM_PATH: './Infra'
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            # S3 bucket for the Terraform state
+            BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
+            DEBUG_TEST: ${{ secrets.TEST_SECRET }}
         uses: ./.github/workflows/debug.yml
 
 # if this works , reference:https://stackoverflow.com/questions/73137473/how-do-i-run-githhub-actions-yaml-files-in-certain-order
