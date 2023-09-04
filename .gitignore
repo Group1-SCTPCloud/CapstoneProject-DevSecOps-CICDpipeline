@@ -1,5 +1,5 @@
 update.md
-*.json
+
 
 #for npm install express
 .node_modules/*
