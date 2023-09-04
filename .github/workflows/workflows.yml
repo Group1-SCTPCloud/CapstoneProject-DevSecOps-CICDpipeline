@@ -16,8 +16,12 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
+            - name: Use Secret in This Workflow
+              run: |
+                echo "Secret from env 1: $DEBUG_TEST"
 
     call-workflow1:
         uses: ./.github/workflows/debug.yml
+        secrets: inherit
 
 # if this works , reference:https://stackoverflow.com/questions/73137473/how-do-i-run-githhub-actions-yaml-files-in-certain-order
