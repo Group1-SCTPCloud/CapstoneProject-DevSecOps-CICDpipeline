@@ -1,9 +1,9 @@
 update.md
 
-
+## pls don't let node module gets loaded
 #for npm install express
 .node_modules/*
-
+node_modules/*
 
 # Local .terraform directories
 **/.terraform/*
