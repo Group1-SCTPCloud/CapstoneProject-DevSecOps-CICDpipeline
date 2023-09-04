@@ -1,11 +1,11 @@
 name: Deploy AWS S3 static website Infrastructure
 
-on:
-    push:
-      branches: [ "*", "*" ]
-      #  - '*'
 #on:
-#  workflow_call:
+#    push:
+#      branches: 
+#        - '*'
+on:
+  workflow_call:
 
 env:
     #verbosity setting for Terraform logs
