@@ -2,7 +2,6 @@ name: Deploy AWS S3 static website Infrastructure
 
 on:
   workflow_call:
-    workflows: ["workflows.yml"]
 
 jobs:
   terraform:
