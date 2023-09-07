@@ -129,6 +129,8 @@ ________________________________________________________________________________
 
 
 ### Lessons Learnt
+- When working with multiple that are dependent on GitHub actions secrets, the use of `secrets: inherit` should be included in the main workflow to ensure workflows downstream have access to secrets.
+
 - When forking repositories and pulling back to the main repository, workflows have no access to secrets and variables. The workaround is to create a new branch, pull to that branch, then pull back to the original branch..
 
 - When using call_workflow, cannot have more than 3 workflows. 
