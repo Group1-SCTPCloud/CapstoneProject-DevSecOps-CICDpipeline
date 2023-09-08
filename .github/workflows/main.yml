@@ -1,4 +1,4 @@
-name: Deploy AWS S3 static website Infrastructure
+name: Deploy web pages
 
 #on:
 #    push:
