@@ -1,6 +1,9 @@
 update.md
-*.json
-.node_module/*
+
+## 
+#for npm install express
+.node_modules/*
+node_modules/*
 
 # Local .terraform directories
 **/.terraform/*

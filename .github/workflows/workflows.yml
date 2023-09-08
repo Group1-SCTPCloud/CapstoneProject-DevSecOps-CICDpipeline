@@ -15,14 +15,15 @@ jobs:
 
     call-workflow1:
         uses: ./.github/workflows/terraform.yml
-
+        secrets: inherit
+        
     call-workflow2:
         if: ${{ always() }} # This will make your workflow2 executed even if workflow1 fails, remove this, if you want to run this only on success of workflow1
         needs: call-workflow1
         
         uses: ./.github/workflows/main.yml
         #uses: ./.github/workflows/main.yml@feature
-
+        secrets: inherit
         
 
 

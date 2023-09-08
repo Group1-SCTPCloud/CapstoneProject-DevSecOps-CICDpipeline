@@ -1,13 +1,15 @@
 # CapstoneProject-DevSecOps-CICDpipeline Group 1
 Deploy a static website
 
-
+Slides: https://docs.google.com/presentation/d/1gCoV5thRjCZjEN5Ua7M2DI2eb4gKK3Qqd1c0f05PKLk/edit#slide=id.g27c64f68ca6_0_14
 
 _______________________________________________________________________________________
 ## Company Profile
   WebSolve is a company that specializes in creating customized administrative software solutions for various industries and domains. WebSolve helps its clients to solve their business challenges and achieve their goals by designing, developing and deploying tailor-made software applications that meet their specific needs and requirements. WebSolve aims to deliver effective solutions that not only help administrators meet their project/daily tasks, but also ensure data quality and efficiency for data collections. With our digitalization and optimization services, we help our clients streamline their workflows and processes, and make the most of their data. WebSolve’s vision is to become a leading provider of customized software solutions in the asia region.
 
   The application websites will be used to show some use cases and let interested consumers to subscribe to our newletters or contact our friendly staff for more information.
+
+  Link: https://group1-staticwebsite-bucket123321.s3.ap-southeast-1.amazonaws.com/index.html
 
 
 ## The Team Consist of:
@@ -39,7 +41,8 @@ ________________________________________________________________________________
 - to use a new <workflow>.yml file: 
     - add workflow dispatch
     - add  call-workflow1:
-           call-workflow2:
+    -       call-workflow2:
+    - add secrets to be inherit
 
     - note that there cannot be more than 3 workflow, not supported
 
@@ -100,10 +103,11 @@ For Main and Dev Branch:
   - Enabled "require status checks to pass before merging"
 
 For Main Branch:
- ( should we also enable "Require review from Code Owners"? )
 
 - Enabled "Secrets scanning and push protection"
 - Enabled "Do not allow bypassing the above settings in main branch"
+
+(we can also add should we also enable "Require review from Code Owners")
 
 **Added Vulnerability Scan**
 
@@ -129,21 +133,27 @@ ________________________________________________________________________________
 
 
 ### Lessons Learnt
+- When working with multiple that are dependent on GitHub actions secrets, the use of `secrets: inherit` should be included in the main workflow to ensure workflows downstream have access to secrets.
+
 - When forking repositories and pulling back to the main repository, workflows have no access to secrets and variables. The workaround is to create a new branch, pull to that branch, then pull back to the original branch..
 
-- When using call_workflow, cannot have more than 3 workflows. 
+- When using composite workflow: eg call_workflow, cannot have more than 3 workflows. 
+
+- When using composite workflow: github secrets needs to be inherited, stated in Workflow.yml under call_worflow
 
 - If more than 1 person working on code on same branch like feature(without pull request needed to marge with code to repository), when I am working, I should always "git pull" frequently to see what are the changes made by others.
 
-### Areas for Improvements
-- Can parameterize bucket names and enviroment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
+- If use ```git add .``` accidentally for unwanted files, use ```git reset HEAD <filename>``` instead of git stash - this makes the files not able to add into repo unless manually git add <filename> again.
 
-- Can use container to get all the advance features for index.html to look professional
+### Areas for Improvements
+- Can parameterize bucket names and environment attributes in Github secrets and variables instead of hard coding in Terraform script for for flexibility
+
+- Can use container to get all the advance features for index.html to look professional with CSS.
+
+- 
 
 _______________________________________________________________________________________
 ## CICD Pipeline
-
-
 
 
 Create New Project 
@@ -191,9 +201,13 @@ _Resources_
 - Github-workflow
   - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idenv
 
+- Github Composite Workflow
+  - https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-
-
+- Resources from 
+  -Canva - HTML page layout
+  -https://app.diagrams.net/
+  -https://github.com/snyk-labs/snyk-cicd-integration-examples
 _______________________________________________________________________________________
 
 ## Notes:
